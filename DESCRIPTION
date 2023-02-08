@@ -2,10 +2,10 @@ Package: courseraFirstPackage
 Title: Analyze Fatality Analysis Reporting System data
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: use_cc0_license()
+    person("Rene", "Siodlaczek", email = "r.siodlaczek@web.de", role = c("aut", "cre"))
+Description: A collection of functions to load and analyse Fatality Analysis 
+    Reporting System data. The analysis includes summarizing and mapping the data.
+License: CC0
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
@@ -15,5 +15,9 @@ Suggests:
     testthat (>= 3.0.0)
 VignetteBuilder: knitr
 Imports: 
-    dplyr
+    dplyr,
+    graphics,
+    maps,
+    readr,
+    tidyr
 Config/testthat/edition: 3

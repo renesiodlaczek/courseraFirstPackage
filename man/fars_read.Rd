@@ -21,6 +21,8 @@ The function execution is stopped if no file with the provided
 filename exists in the working directory.
 }
 \examples{
-accident_2013 <- fars_read("accident_2013.csv.bz2")
+\dontrun{
+        accident_2013 <- fars_read("accident_2013.csv.bz2")
+        }
 
 }

@@ -14,9 +14,9 @@ displayed in the filenames.}
 This function returns a character vector with the created filenames.
 }
 \description{
-This function creates a character vector to create a Fatality Analysis Reporting
-System filename. The single values consists of "accident", the parameter
-\code{year} and the ending "csv.bz2".
+This function creates a character vector to create a Fatality Analysis
+Reporting System filename. The single values consists of "accident", the
+parameter \code{year} and the ending "csv.bz2".
 }
 \note{
 The function execution is stopped if the given parameter cannot be

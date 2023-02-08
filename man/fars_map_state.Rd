@@ -10,7 +10,7 @@ fars_map_state(state.num, year)
 \item{state.num}{A character or integer value of the state number for which
 the accidents shall be mapped.}
 
-\item{years}{A character or integer value of the year for which the data shall
+\item{year}{A character or integer value of the year for which the data shall
 be read and mapped.}
 }
 \value{
@@ -30,7 +30,9 @@ The function execution is stopped if an invalid state number or year is
 given or when there is no data to plot.
 }
 \examples{
-fars_map_state(1, 2015)
-fars_map_state("1", "2015")
+\dontrun{
+        fars_map_state(1, 2015)
+        fars_map_state("1", "2015")
+        }
 
 }

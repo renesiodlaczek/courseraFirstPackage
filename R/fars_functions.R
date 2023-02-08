@@ -11,7 +11,9 @@
 #'      filename exists in the working directory.
 #'
 #' @examples
-#' accident_2013 <- fars_read("accident_2013.csv.bz2")
+#' \dontrun{
+#'         accident_2013 <- fars_read("accident_2013.csv.bz2")
+#'         }
 #'
 #' @export
 fars_read <- function(filename) {
@@ -26,9 +28,9 @@ fars_read <- function(filename) {
 
 #' Make a filename for a Fatality Analysis Reporting System "csv.bz2"-file
 #'
-#' This function creates a character vector to create a Fatality Analysis Reporting
-#' System filename. The single values consists of "accident", the parameter
-#' \code{year} and the ending "csv.bz2".
+#' This function creates a character vector to create a Fatality Analysis
+#' Reporting System filename. The single values consists of "accident", the
+#' parameter \code{year} and the ending "csv.bz2".
 #'
 #' @param year A character or integer vector with the years that are
 #'      displayed in the filenames.
@@ -70,8 +72,10 @@ make_filename <- function(year) {
 #'      directory.
 #'
 #' @examples
-#' fars_month_year <- fars_read_years(c(2013, 2014, 2015))
-#' fars_month_year <- fars_read_years(c("2013", "2014", "2015"))
+#' \dontrun{
+#'         fars_month_year <- fars_read_years(c(2013, 2014, 2015))
+#'         fars_month_year <- fars_read_years(c("2013", "2014", "2015"))
+#'         }
 #'
 #' @importFrom dplyr %>%
 #'
@@ -108,18 +112,19 @@ fars_read_years <- function(years) {
 #' @details The function calls the function \code{\link{fars_read_years}}.
 #'
 #' @examples
-#' fars_summarize_years(c(2013, 2014, 2015))
-#' fars_summarize_years(c("2013", "2014", "2015"))
+#' \dontrun{
+#'         fars_summarize_years(c(2013, 2014, 2015))
+#'         fars_summarize_years(c("2013", "2014", "2015"))
+#'         }
 #'
 #' @importFrom dplyr %>%
-#' @importFrom dplyr n
 #'
 #' @export
 fars_summarize_years <- function(years) {
         dat_list <- fars_read_years(years)
         dplyr::bind_rows(dat_list) %>%
                 dplyr::group_by(year, MONTH) %>%
-                dplyr::summarize(n = n()) %>%
+                dplyr::summarize(n = dplyr::n()) %>%
                 tidyr::spread(year, n)
 }
 
@@ -131,7 +136,7 @@ fars_summarize_years <- function(years) {
 #'
 #' @param state.num A character or integer value of the state number for which
 #'      the accidents shall be mapped.
-#' @param years A character or integer value of the year for which the data shall
+#' @param year A character or integer value of the year for which the data shall
 #'      be read and mapped.
 #'
 #' @return This function returns a map with the geo-locations of the accidents
@@ -144,8 +149,10 @@ fars_summarize_years <- function(years) {
 #'      given or when there is no data to plot.
 #'
 #' @examples
-#' fars_map_state(1, 2015)
-#' fars_map_state("1", "2015")
+#' \dontrun{
+#'         fars_map_state(1, 2015)
+#'         fars_map_state("1", "2015")
+#'         }
 #'
 #' @export
 fars_map_state <- function(state.num, year) {

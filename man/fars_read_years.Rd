@@ -30,7 +30,9 @@ no corresponding file for the generated filename exists in the working
 directory.
 }
 \examples{
-fars_month_year <- fars_read_years(c(2013, 2014, 2015))
-fars_month_year <- fars_read_years(c("2013", "2014", "2015"))
+\dontrun{
+        fars_month_year <- fars_read_years(c(2013, 2014, 2015))
+        fars_month_year <- fars_read_years(c("2013", "2014", "2015"))
+        }
 
 }

@@ -1,5 +1,5 @@
 ---
-title: "vignette_firstpackage"
+title: "courseraFirstPackage"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{vignette_firstpackage}
@@ -10,10 +10,42 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
+  warning = FALSE,
   comment = "#>"
 )
 ```
 
+To work with the (installed) package it needs to be loaded first.
+
 ```{r setup}
-#library(courseraFirstPackage)
+library(courseraFirstPackage)
 ```
+
+The three main package functions are designed to simultaneously load the raw data and get a required analysis result. The data is always read from the current working directory with the help of the function fars_read(). To make the usage of the other functions easier make_filename() is used in the background to create the filenames. Therefore it is important that the filenames correspond to the defined naming convention. Both functions can also be used on their own to read in the raw data.
+
+```{r}
+filename_2013 <- make_filename(2013)
+filename_2013
+
+data_raw <- fars_read(filename_2013)
+head(data_raw)
+```
+The first function to analyze the data is fars_read_years() that reads the raw data in and returns a list with one dataframe (tibble) per year. Each row corresponds with one accident and contains the respective month number. The only required parameter is the specification of the years that shall be analyzed.
+
+```{r}
+data_years <- fars_read_years(c(2013, 2014, 2015))
+head(data_years)
+```
+
+To get an immediate summary of the accidents the function fars_summarize_years() can be used. Per year it returns the monthly counts of accidents in a tibble format.
+
+```{r}
+data_summary <- fars_summarize_years(c(2013, 2014, 2015))
+head(data_summary)
+```
+Furthermore the geo-information of the raw data can be used to analyze the data visually on a map. To achieve this a single state number and a single year need to be provided to the function fars_map_state(). As a result the geographic distribution for the accidents that happened in this year and in this state is returned.
+
+```{r}
+fars_map_state(1, 2015)
+```
+
