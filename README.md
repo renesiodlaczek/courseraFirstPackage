@@ -7,6 +7,7 @@
 
 [![Travis build
 status](https://travis-ci.com/renesiodlaczek/courseraFirstPackage.svg?branch=main)](https://travis-ci.com/renesiodlaczek/courseraFirstPackage)
+[![R-CMD-check](https://github.com/renesiodlaczek/courseraFirstPackage/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/renesiodlaczek/courseraFirstPackage/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 The goal of courseraFirstPackage is to show
