@@ -16,42 +16,26 @@ knitr::opts_chunk$set(
 # courseraFirstPackage
 
 <!-- badges: start -->
-[![Travis build status](https://travis-ci.com/renesiodlaczek/courseraFirstPackage.svg?branch=main)](https://travis-ci.com/renesiodlaczek/courseraFirstPackage)
-[![R-CMD-check](https://github.com/renesiodlaczek/courseraFirstPackage/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/renesiodlaczek/courseraFirstPackage/actions/workflows/R-CMD-check.yaml)
+
+[![Travis build status](https://travis-ci.com/renesiodlaczek/courseraFirstPackage.svg?branch=main)](https://travis-ci.com/renesiodlaczek/courseraFirstPackage) [![R-CMD-check](https://github.com/renesiodlaczek/courseraFirstPackage/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/renesiodlaczek/courseraFirstPackage/actions/workflows/R-CMD-check.yaml)
+
 <!-- badges: end -->
 
-The goal of courseraFirstPackage is to show
+The goal of courseraFirstPackage is to provide functions to load and analyze data from the US National Highway Traffic Safety Administration's Fatality Analysis Reporting System, which is a nationwide census providing the American public yearly data regarding fatal injuries suffered in motor vehicle traffic crashes. You can download the data from [here](https://www.nhtsa.gov/file-downloads?p=nhtsa/downloads/FARS/).
 
 ## Installation
 
 You can install the development version of courseraFirstPackage from [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("devtools")
+install.packages("devtools")
 devtools::install_github("renesiodlaczek/courseraFirstPackage")
 ```
 
-## Example
+## Usage
 
-This is a basic example which shows you how to solve a common problem:
+Please refer to the vignette for a description how to use the package.
 
-```{r example}
-#library(courseraFirstPackage)
-## basic example code
-```
+## Coursera Grading
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
-
-```{r cars}
-summary(cars)
-```
-
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this. You could also use GitHub Actions to re-render `README.Rmd` every time you push. An example workflow can be found here: <https://github.com/r-lib/actions/tree/v1/examples>.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN
+Unfortunately a bug on Travis prevents to be able to test the package there. It says that I have exceeded the number of users allowed for may plan... Therefore I did the unit testing with github. This is the second badge (R-CMD-check) at the top of this file.
